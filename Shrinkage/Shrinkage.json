@@ -2,7 +2,7 @@
   "Author": "mikelosx",
   "Name": "Shrinkage",
   "Punchline": "Shrinks characters based on their Health!",
-  "Description": "/shrinkage to open the config window and more silliness.",
+  "Description": "This plugin will shrink and grow characters based on how much health they have, affects you and your party \n\n/shrinkage to open the config window.",
   "ApplicableVersion": "any",
   "Tags": [
       "funny"

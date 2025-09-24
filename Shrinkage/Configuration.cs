@@ -12,7 +12,7 @@ public class Configuration : IPluginConfiguration
 
     public float Speed { get; set; } = 2.0f;
     public float MinScale { get; set; } = 0.1f;
-    public float MaxScale { get; set; } = 10.0f;
+    public float MaxScale { get; set; } = 2.0f;
     
     public void Save()
     {

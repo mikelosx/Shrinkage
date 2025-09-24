@@ -52,5 +52,14 @@ public class ConfigWindow : Window, IDisposable
             configuration.AdjustAnimScale = animScale;
             configuration.Save();
         }
+
+        if (ImGui.Button("Default"))
+        {
+            configuration.AdjustAnimScale = true;
+            configuration.MinScale = 0.1f;
+            configuration.MaxScale = 2.0f;
+            configuration.Speed = 2.0f;
+            configuration.Save();
+        }
     }
 }
