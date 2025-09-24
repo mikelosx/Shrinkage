@@ -30,7 +30,6 @@ public sealed class Plugin : IDalamudPlugin
     private ConfigWindow ConfigWindow { get; init; }
     public Plugin()
     {
-        
         Framework.Update += OnFrameworkUpdate;
         
         Configuration = PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();

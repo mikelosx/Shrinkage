@@ -5,7 +5,7 @@
   "Description": "/shrinkage to open the config window and more silliness.",
   "ApplicableVersion": "any",
   "Tags": [
-    "silly",
       "funny"
-  ]
+  ],
+    "RepoUrl": "https://github.com/mikelosx/Shrinkage"
 }
