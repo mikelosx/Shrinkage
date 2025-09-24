@@ -1,0 +1,11 @@
+{
+  "Author": "mikelosx",
+  "Name": "Shrinkage",
+  "Punchline": "Shrinks characters based on their Health!",
+  "Description": "/shrinkage to open the config window and more silliness.",
+  "ApplicableVersion": "any",
+  "Tags": [
+    "silly",
+      "funny"
+  ]
+}
