@@ -16,6 +16,10 @@ public class Configuration : IPluginConfiguration
     
     public void Save()
     {
+        if (MinScale < 0.01f){ MinScale = 0.01f; }
+        if (MaxScale > 3.00f){ MaxScale = 3.00f; }
+        
+        if (MinScale > MaxScale){ MinScale = MaxScale; }
         Plugin.PluginInterface.SavePluginConfig(this);
     }
 }
