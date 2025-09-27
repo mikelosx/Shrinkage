@@ -1,0 +1,21 @@
+[
+  {
+    Author: 'mikelox',
+    Name: 'A Custom Plugin',
+    Description: 'A long description about what this plugin is or does, to show upon expanding its installer entry.',
+    InternalName: 'ACustomPlugin',
+    AssemblyVersion: '1.0.0.0',
+    TestingAssemblyVersion: null,
+    RepoUrl: 'https://github.com/mikelosx/Shrinkage',
+    ApplicableVersion: 'any',
+    DalamudApiLevel: 10,
+    Punchline: 'this is a short blurb about what this plugin is, it makes you short',
+    IsHide: false,
+    IsTestingExclusive: false,
+    DownloadLinkInstall: 'https://github.com/mikelosx/Shrinkage/releases/download/initial/Shrinkage.zip',
+    DownloadLinkTesting: 'https://github.com/mikelosx/Shrinkage/releases/download/initial/Shrinkage.zip',
+    DownloadLinkUpdate: 'https://github.com/mikelosx/Shrinkage/releases/download/initial/Shrinkage.zip',
+    IconUrl: 'https://raw.githubusercontent.com/mikelosx/Shrinkage/refs/heads/repo-test/Shrinkage/images/icon.png',
+    LastUpdate: '1701231234',
+  },
+]
