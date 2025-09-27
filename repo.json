@@ -1,9 +1,9 @@
 [
   {
     "Author": "mikelosx",
-    "Name": "Shrinkage2",
+    "Name": "Shrinkage",
     "Description": "shrinkage",
-    "InternalName": "Shrinkage2",
+    "InternalName": "Shrinkage",
     "AssemblyVersion": "1.0.0.0",
     "TestingAssemblyVersion": "1.0.0.0",
     "RepoUrl": "https://github.com/mikelosx/Shrinkage",
