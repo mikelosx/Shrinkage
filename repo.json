@@ -8,7 +8,7 @@
     TestingAssemblyVersion: null,
     RepoUrl: 'https://github.com/mikelosx/Shrinkage',
     ApplicableVersion: 'any',
-    DalamudApiLevel: 10,
+    DalamudApiLevel: 13,
     Punchline: 'this is a short blurb about what this plugin is, it makes you short',
     IsHide: false,
     IsTestingExclusive: false,
