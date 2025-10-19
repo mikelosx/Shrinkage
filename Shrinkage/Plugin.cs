@@ -6,6 +6,7 @@ using Dalamud.Interface.Windowing;
 using Dalamud.Plugin.Services;
 using Shrinkage.Windows;
 using FFXIVClientStructs.FFXIV.Client.Game.Character;
+using FFXIVClientStructs.FFXIV.Client.Graphics.Scene;
 using Vector3 = FFXIVClientStructs.FFXIV.Common.Math.Vector3;
 
 
@@ -92,27 +93,27 @@ public sealed class Plugin : IDalamudPlugin
     {
         if (actor == null) return;
         float maxhp = actor->MaxHealth;
-        float shield = ((float)actor->ShieldValue / 100f) * maxhp;
+        float shield = (actor->ShieldValue / 100f) * maxhp;
         float health = actor->Health + shield;
         float hpRatio = health / maxhp;
         float targetScale = Math.Clamp(hpRatio, Configuration.MinScale, Configuration.MaxScale);
 
-        var draw = actor->DrawObject;
+        var draw = (CharacterBase*)actor->DrawObject;
 
         if (draw != null)
         {
             float scale = draw->Scale.Y;
             scale = float.Lerp(scale, targetScale, Configuration.Speed / 60f);
             draw->Scale = new Vector3(scale, scale, scale);
-
-            if (Configuration.AdjustAnimScale)
-            {
-                actor->Scale = scale;
-            }
-            else
-            {
-                actor->Scale = 1.0f;
-            }
+            
+            // if (Configuration.AdjustAnimScale)
+            // {
+            //     actor->VfxScale = scale;
+            // }
+            // else
+            // {
+            //     actor->VfxScale = 1.0f;
+            // }
         }
     }
     

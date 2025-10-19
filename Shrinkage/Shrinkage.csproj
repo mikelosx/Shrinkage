@@ -6,11 +6,6 @@
     <PackageProjectUrl>https://github.com/mikelosx/Shrinkage</PackageProjectUrl>
     <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
     <IsPackable>false</IsPackable>
-    <RootNamespace>SamplePlugin</RootNamespace>
+    <RootNamespace>Shrinkage</RootNamespace>
   </PropertyGroup>
-    <ItemGroup>
-        <Content Include="images/icon.png">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
-    </ItemGroup>
 </Project>
