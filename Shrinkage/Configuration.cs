@@ -8,7 +8,7 @@ public class Configuration : IPluginConfiguration
 {
     public int Version { get; set; } = 0;
     
-    public bool AdjustAnimScale { get; set; } = true;
+    // public bool AdjustAnimScale { get; set; } = true;
 
     public float Speed { get; set; } = 2.0f;
     public float MinScale { get; set; } = 0.1f;
