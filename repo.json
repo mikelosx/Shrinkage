@@ -4,8 +4,8 @@
     "Name": "Shrinkage",
     "Description": "shrinkage",
     "InternalName": "Shrinkage",
-    "AssemblyVersion": "1.0.0.0",
-    "TestingAssemblyVersion": "1.0.0.0",
+    "AssemblyVersion": "0.1.1.0",
+    "TestingAssemblyVersion": "0.1.1.0",
     "RepoUrl": "https://github.com/mikelosx/Shrinkage",
     "ApplicableVersion": "any",
     "DalamudApiLevel": 13,
@@ -14,9 +14,9 @@
     "DownloadCount": 0,
     "LastUpdate": 0,
     "LoadPriority": 69420,
-    "DownloadLinkInstall": "https://github.com/mikelosx/Shrinkage/releases/download/initial/Shrinkage.zip",
-    "DownloadLinkTesting": "https://github.com/mikelosx/Shrinkage/releases/download/initial/Shrinkage.zip",
-    "DownloadLinkUpdate": "https://github.com/mikelosx/Shrinkage/releases/download/initial/Shrinkage.zip",
+    "DownloadLinkInstall": "https://github.com/mikelosx/Shrinkage/releases/download/release/shrinkage0_1_1.zip",
+    "DownloadLinkTesting": "https://github.com/mikelosx/Shrinkage/releases/download/release/shrinkage0_1_1.zip",
+    "DownloadLinkUpdate": "https://github.com/mikelosx/Shrinkage/releases/download/release/shrinkage0_1_1.zip",
     "IconUrl": "https://raw.githubusercontent.com/mikelosx/Shrinkage/refs/heads/repo-test/Shrinkage/images/icon.png"
   }
 ]
