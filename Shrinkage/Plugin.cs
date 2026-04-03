@@ -16,7 +16,7 @@ public sealed class Plugin : IDalamudPlugin
 {
     [PluginService] internal static IDalamudPluginInterface PluginInterface { get; private set; } = null!;
     [PluginService] internal static ICommandManager CommandManager { get; private set; } = null!;
-    [PluginService] internal static IClientState ClientState { get; private set; } = null!;
+    [PluginService] internal static IObjectTable ObjectTable { get; private set; } = null!;
     
     [PluginService] internal static IPartyList PartyList { get; private set; } = null!;
 
@@ -72,7 +72,7 @@ public sealed class Plugin : IDalamudPlugin
     {
         if (PartyList.Length == 0)
         {
-            var player = ClientState.LocalPlayer;
+            var player = ObjectTable.LocalPlayer;
             if (player == null) return;
 
             AdjustScale((Character*)player.Address);

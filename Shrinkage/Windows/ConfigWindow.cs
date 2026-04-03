@@ -35,13 +35,13 @@ public class ConfigWindow : Window, IDisposable
             configuration.Save();
         }
 
-        if (ImGui.DragFloat("Maximum Size", ref maxScale, 0.01F, 1.00F, 3.00F))
-        {
-            if (maxScale < 1.00F){ maxScale = 1.00F; }
-            configuration.MaxScale = maxScale;
-            if (configuration.MinScale > configuration.MaxScale){ configuration.MinScale = configuration.MaxScale; }
-            configuration.Save();
-        }
+        // if (ImGui.DragFloat("Maximum Size", ref maxScale, 0.01F, 1.00F, 3.00F))
+        // {
+        //     if (maxScale < 1.00F){ maxScale = 1.00F; }
+        //     configuration.MaxScale = maxScale;
+        //     if (configuration.MinScale > configuration.MaxScale){ configuration.MinScale = configuration.MaxScale; }
+        //     configuration.Save();
+        // }
 
         if (ImGui.DragFloat("Shrink Speed", ref speed, 0.1F, 0.1F, 100.0F))
         {
@@ -59,7 +59,7 @@ public class ConfigWindow : Window, IDisposable
         {
             // configuration.AdjustAnimScale = true;
             configuration.MinScale = 0.1f;
-            configuration.MaxScale = 2.0f;
+            configuration.MaxScale = 1.0f;
             configuration.Speed = 2.0f;
             configuration.Save();
         }
