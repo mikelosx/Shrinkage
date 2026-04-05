@@ -23,45 +23,37 @@ public class ConfigWindow : Window, IDisposable
     public override void Draw()
     {
         var speed = configuration.Speed;
-        var maxScale = configuration.MaxScale;
         var minScale = configuration.MinScale;
-        // var animScale = configuration.AdjustAnimScale;
+        var shrinkParty = configuration.ShrinkParty;
 
         if (ImGui.DragFloat("Minimum Size", ref minScale, 0.01F, 0.01F, 1.00F))
         {
             if (minScale > 1.00F){ minScale = 1.00F; }
             configuration.MinScale = minScale;
-            if (configuration.MaxScale < configuration.MinScale){ configuration.MaxScale = configuration.MinScale; }
             configuration.Save();
         }
-
-        // if (ImGui.DragFloat("Maximum Size", ref maxScale, 0.01F, 1.00F, 3.00F))
-        // {
-        //     if (maxScale < 1.00F){ maxScale = 1.00F; }
-        //     configuration.MaxScale = maxScale;
-        //     if (configuration.MinScale > configuration.MaxScale){ configuration.MinScale = configuration.MaxScale; }
-        //     configuration.Save();
-        // }
 
         if (ImGui.DragFloat("Shrink Speed", ref speed, 0.1F, 0.1F, 100.0F))
         {
             configuration.Speed = speed;
             configuration.Save();
         }
-
-        // if (ImGui.Checkbox("Scale camera and animation speed with size", ref animScale))
-        // {
-        //     configuration.AdjustAnimScale = animScale;
-        //     configuration.Save();
-        // }
+        
+        if (ImGui.Checkbox("Shrink Party", ref shrinkParty))
+        {
+            configuration.ShrinkParty = shrinkParty;
+            configuration.Save();
+        }
+        
 
         if (ImGui.Button("Default"))
         {
-            // configuration.AdjustAnimScale = true;
+            configuration.ShrinkParty = true;
             configuration.MinScale = 0.1f;
-            configuration.MaxScale = 1.0f;
             configuration.Speed = 2.0f;
             configuration.Save();
         }
+        
+        ImGui.Text("This plugin is disabled in PVP");
     }
 }

@@ -9,7 +9,6 @@ using FFXIVClientStructs.FFXIV.Client.Game.Character;
 using FFXIVClientStructs.FFXIV.Client.Graphics.Scene;
 using Vector3 = FFXIVClientStructs.FFXIV.Common.Math.Vector3;
 
-
 namespace Shrinkage;
 
 public sealed class Plugin : IDalamudPlugin
@@ -17,11 +16,9 @@ public sealed class Plugin : IDalamudPlugin
     [PluginService] internal static IDalamudPluginInterface PluginInterface { get; private set; } = null!;
     [PluginService] internal static ICommandManager CommandManager { get; private set; } = null!;
     [PluginService] internal static IObjectTable ObjectTable { get; private set; } = null!;
-    
     [PluginService] internal static IPartyList PartyList { get; private set; } = null!;
-
-    [PluginService]
-    internal static IFramework Framework { get; private set; } = null!;
+    [PluginService] internal static IFramework Framework { get; private set; } = null!;
+    [PluginService] internal static IClientState ClientState { get; private set; } = null!;
 
     private const string CommandName = "/shrinkage";
 
@@ -52,7 +49,6 @@ public sealed class Plugin : IDalamudPlugin
 
     public void Dispose()
     {
-        // Unregister all actions to not leak anything during disposal of plugin
         PluginInterface.UiBuilder.Draw -= WindowSystem.Draw;
         PluginInterface.UiBuilder.OpenConfigUi -= ToggleConfigUi;
         
@@ -70,7 +66,11 @@ public sealed class Plugin : IDalamudPlugin
     
     private unsafe void OnFrameworkUpdate(IFramework framework)
     {
-        if (PartyList.Length == 0)
+        // disabled during pvp
+        if (ClientState.IsPvP){ return; }
+        
+        // runs the first statement if not in party or shrink party is set to false, else iterates through entire party and shrinks members individually
+        if (PartyList.Length == 0 || !Configuration.ShrinkParty)
         {
             var player = ObjectTable.LocalPlayer;
             if (player == null) return;
@@ -89,6 +89,7 @@ public sealed class Plugin : IDalamudPlugin
         }
     }
 
+    // find the actor's health and shield value and uses that to adjust the model's scale
     public unsafe void AdjustScale(Character* actor)
     {
         if (actor == null) return;
@@ -96,7 +97,7 @@ public sealed class Plugin : IDalamudPlugin
         float shield = (actor->ShieldValue / 100f) * maxhp;
         float health = actor->Health + shield;
         float hpRatio = health / maxhp;
-        float targetScale = Math.Clamp(hpRatio, Configuration.MinScale, Configuration.MaxScale);
+        float targetScale = Math.Clamp(hpRatio, Configuration.MinScale, 1f);
 
         var draw = (CharacterBase*)actor->DrawObject;
 
@@ -106,14 +107,6 @@ public sealed class Plugin : IDalamudPlugin
             scale = float.Lerp(scale, targetScale, Configuration.Speed / 60f);
             draw->Scale = new Vector3(scale, scale, scale);
             
-            // if (Configuration.AdjustAnimScale)
-            // {
-            //     actor->VfxScale = scale;
-            // }
-            // else
-            // {
-            //     actor->VfxScale = 1.0f;
-            // }
         }
     }
     
