@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Dalamud.NET.Sdk/14.0.2">
+<Project Sdk="Dalamud.NET.Sdk/15.0.0">
   <PropertyGroup>
     <Version>0.1.1.0</Version>
     <Description>Shrinks characters based on how much health they have!</Description>
-    <PackageProjectUrl>https://github.com/mikelosx/Shrinkage</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/newbielord/Shrinkage</PackageProjectUrl>
     <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
     <IsPackable>false</IsPackable>
     <RootNamespace>Shrinkage</RootNamespace>
